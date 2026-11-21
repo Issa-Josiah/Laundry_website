@@ -1,0 +1,1 @@
+Main docs for KINGS LAUNDRY to be used by the next developer
