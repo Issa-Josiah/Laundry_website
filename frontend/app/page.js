@@ -8,22 +8,23 @@ export default function Home() {
       <header className="header">
         <div className="container header-inner">
           <a href="#home" className="logo">
-            <span className="logo-box">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="#1aa3b5" aria-hidden="true">
-                <path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0z" />
-              </svg>
-            </span>
+            {d.header.logo.show && (
+              <img
+                className="logo-img"
+                src={d.header.logo.src}
+                alt={d.header.logo.alt}
+                style={{ width: d.header.logo.width, height: d.header.logo.height }}
+              />
+            )}
             <span className="logo-text">
-              <strong>King&apos;s</strong>
-              <small>DRYCLEANERS &amp; LAUNDRY</small>
+              <strong>{d.header.brandName}</strong>
+              <small>{d.header.tagline}</small>
             </span>
           </a>
           <nav className="nav">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            {d.header.nav.map((n) => (
+              <a key={n.href} href={n.href}>{n.label}</a>
+            ))}
           </nav>
         </div>
       </header>
@@ -32,7 +33,7 @@ export default function Home() {
       <section id="home" className="hero">
         <div className="container hero-grid">
           <div>
-            <p className="eyebrow">Laundry calling? King&apos;s coming!</p>
+            <p className="eyebrow">Laundry calling? Kings coming!</p>
             <h1>{d.hero.title}</h1>
             <p>{d.hero.subtitle}</p>
             <div className="btn-row">

@@ -1,10 +1,29 @@
+// frontend/data/mockData.js
 export const siteData = {
   name: "King's DryCleaners and Laundry",
+  header: {
+    brandName: "Kings",
+    tagline: "DRYCLEANERS AND LAUNDRY",
+    logo: {
+      show: true,                 
+      src: "/images/logo.png",    
+      alt: "Kings logo",
+      width: 48,                 
+      height: 48,                
+    },
+    nav: [
+      { label: "Home", href: "#home" },
+      { label: "Services", href: "#services" },
+      { label: "Gallery", href: "#gallery" },
+      { label: "About", href: "#about" },
+      { label: "Contact", href: "#contact" },
+    ],
+  },
   hero: {
     title: "You wear it, We Care for it!",
     subtitle:
       "From your everyday favourites to the fabrics that make your house a home, we take care of the cleaning, so you can get on with stress-free living.",
-    locationTag: "Kirigiti Center · Near Todas Restaurant",
+    locationTag: "Kirigiti Center, Along Kirigiti Riabai Road. Near Todas Restaurant.",
     heroImage: "/images/hero-basket.png",
   },
   services: [
