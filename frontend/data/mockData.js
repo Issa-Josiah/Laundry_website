@@ -1,0 +1,79 @@
+// frontend/data/mockData.js
+export const siteData = {
+  name: "King's DryCleaners and Laundry",
+  header: {
+    brandName: "Kings",
+    tagline: "DRYCLEANERS AND LAUNDRY",
+    logo: {
+      show: true,                 
+      src: "/images/logo.png",    
+      alt: "Kings logo",
+      width: 48,                 
+      height: 48,                
+    },
+    nav: [
+      { label: "Home", href: "#home" },
+      { label: "Services", href: "#services" },
+      { label: "Gallery", href: "#gallery" },
+      { label: "About", href: "#about" },
+      { label: "Contact", href: "#contact" },
+    ],
+  },
+  hero: {
+    title: "You wear it, We Care for it!",
+    subtitle:
+      "From your everyday favourites to the fabrics that make your house a home, we take care of the cleaning, so you can get on with stress-free living.",
+    locationTag: "Kirigiti Center, Along Kirigiti Riabai Road. Near Todas Restaurant.",
+    heroImage: "/images/hero-basket.png",
+  },
+  services: [
+    { id: "01", title: "Laundry & folding", description: "Everyday clothes, washed, dried and neatly folded.", pricingRule: "By weight · confirmed at weighing", note: "Contact us for a confirmed price" },
+    { id: "02", title: "Dry-cleaning", description: "Thoughtful care for garments that need a specialist touch.", pricingRule: "By garment · material assessed before cleaning", note: "Contact us for a confirmed price" },
+    { id: "03", title: "Carpets & rugs", description: "From lighter rugs to heavier carpets, with care matched to the material.", pricingRule: "Light / heavy · assessed individually", note: "Light and heavy rates quoted separately" },
+    { id: "04", title: "Duvets & bedding", description: "Fresh bedding, ready for a comfortable night's sleep.", pricingRule: "By piece · size and filling determine the price", note: "Contact us for a confirmed price" },
+    { id: "05", title: "Curtains", description: "A fresh start for your space, from sheers to heavier curtains.", pricingRule: "Light / heavy · material and quantity assessed", note: "Light and heavy rates quoted separately" },
+    { id: "06", title: "Ironing & pressing", description: "A crisp, polished finish for your everyday and occasion wear.", pricingRule: "By garment · quantity confirmed on arrival", note: "Contact us for a confirmed price" },
+    { id: "07", title: "Express cleaning", description: "Need it sooner? Contact us about current availability.", pricingRule: "By order · turnaround agreed before processing", note: "Express price on request" },
+    { id: "08", title: "Fumigation", description: "Discuss your space and cleaning requirements directly with us.", pricingRule: "By space · assessment required", note: "Contact us for a confirmed price" },
+  ],
+  bulk: {
+    title: "More laundry? Let's talk.",
+    text: "Discounts are available for bulk orders. Share your items and quantities with us for a confirmed price.",
+    cta: "Discuss a bulk order",
+  },
+  detergents: [
+    { id: 1, name: "Downy", image: "/images/downy.png" },
+    { id: 2, name: "Ariel", image: "/images/ariel.png" },
+    { id: 3, name: "Sunlight", image: "/images/sunlight.png" },
+    { id: 4, name: "Sta-soft", image: "/images/stasoft.png" },
+    { id: 5, name: "Omo", image: "/images/omo.png" },
+  ],
+  gallery: [
+    { id: 1, caption: "Freshly folded", image: "/images/folded.png" },
+    { id: 2, caption: "Pressed & ready", image: "/images/pressed.png" },
+    { id: 3, caption: "Pressed with care", image: "/images/iron.png" },
+    { id: 4, caption: "Everyday laundry care", image: "/images/everyday.png" },
+  ],
+  about: {
+    eyebrow: "Great care. Complete cleaning.",
+    title: "Good care starts close to home.",
+    text: "King's DryCleaners and Laundry serves you with one simple idea: make it easier to care for your clothes and your home, all in one place.",
+    highlight: "Not just clothes. Everything you care for.",
+    text2: "From everyday laundry and dry-cleaning to carpets, duvets, curtains, pressing and fumigation. We match the price to your items instead of offering a one-size-fits-all price.",
+    image: "/images/wash-dry-fold.png",
+  },
+  steps: [
+    { id: "01", title: "Bring it in or arrange pickup", text: "Visit us or contact us for any inquiries, or to arrange a pickup." },
+    { id: "02", title: "We assess, weigh and price", text: "Your items are checked and priced by weight, type or material before processing." },
+    { id: "03", title: "Fresh, finished and ready", text: "We'll call or text when your order is ready for pickup or agreed delivery." },
+  ],
+  contact: {
+    place: "Kirigiti Center",
+    landmark: "Near Todas Restaurant",
+    hours: "Monday – Saturday: 8:00 AM – 5:00 PM. Sunday available upon request.",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Kirigiti+Center+Todas+Restaurant",
+    note: "Contact us to arrange pickup, delivery, express turnaround and order updates.",
+    phone: "+254 700 000 000",
+    whatsapp: "254700000000",
+  },
+};
