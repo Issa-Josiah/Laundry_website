@@ -40,9 +40,10 @@ export default function RootLayout({ children }) {
             <Nav
               items={[
                 { label: "Home", href: "/" },
+                { label: "About", href: "/about" },
                 { label: "Services", href: "/services" },
                 { label: "Gallery", href: "/gallery" },
-                { label: "About", href: "/about" },
+                { label: "Find Us", href: "/find-us" },
                 { label: "Contact", href: "/contact" },
               ]}
             />

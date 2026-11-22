@@ -130,6 +130,7 @@ section[id] { scroll-margin-top: 64px; }
 .footer .socials { margin-top: 10px; }
 .copy { border-top: 1px solid rgba(255, 255, 255, 0.15); margin-top: 32px; padding-top: 16px; text-align: center; font-size: 12px; opacity: 0.7; }
 
+
 @media (max-width: 760px) {
   .hero-grid, .about-grid, .services-grid, .gallery, .steps, .footer-grid, .contact-grid { grid-template-columns: 1fr; }
   .form-card { order: -1; }
@@ -142,4 +143,228 @@ section[id] { scroll-margin-top: 64px; }
   .nav a { padding: 14px 6vw; border-top: 1px solid rgba(0, 0, 0, 0.12); }
   .logo-text strong { font-size: 1.2rem; }
   .logo-text small { display: none; }
+}
+/* ===== Find Us page ===== */
+.lost-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: var(--blue);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.lost-banner h3 { margin-bottom: 4px; }
+.lost-banner p { font-size: 15px; color: var(--brown); margin: 0; }
+.lost-banner .btn { background: var(--brown); color: #fff; border-color: var(--brown); }
+
+.map-wrap {
+  border: 1px solid #B08968;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  background: var(--card);
+}
+.map-wrap iframe { display: block; }
+
+.find-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .find-grid { grid-template-columns: 1fr; }
+  .lost-banner { flex-direction: column; align-items: flex-start; }
+  .map-wrap iframe { height: 300px; }
+}
+
+/* ===== Contact intro — side by side on desktop, card hidden on mobile ===== */
+.contact-intro {
+  background: #EBF7FF;
+  padding: 56px 0 64px;
+}
+.contact-intro-flex {
+  display: grid;
+  grid-template-columns: 1.2fr 340px;   /* text | card side by side */
+  gap: 40px;
+  align-items: center;
+}
+.contact-intro-text { max-width: 640px; }
+.contact-intro h1 { margin-bottom: 16px; }
+.contact-intro .lead { margin-bottom: 20px; }
+
+.quick-contact-card {
+  background: #fff;
+  border: 1px solid #B08968;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow:
+    0 4px 10px rgba(58, 42, 32, 0.05),
+    0 24px 48px rgba(58, 42, 32, 0.14);
+}
+.quick-contact-card h3 { margin-bottom: 6px; }
+.quick-contact-card .card-sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.quick-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quick-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #fff;
+  border: 1px solid rgba(176, 137, 104, 0.4);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.qc-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  color: var(--muted);
+}
+.qc-value { font-size: 14px; font-weight: 700; color: var(--brown); }
+.qc-value.plain-link { text-decoration: none; }
+.qc-value.plain-link:hover { color: var(--brown); }
+
+/* Float animation */
+.float-card {
+  animation: floatY 6s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .float-card { animation: none; }
+}
+
+/* Buttons */
+.btn-outline {
+  background: transparent;
+  color: var(--brown);
+  border: 1px solid var(--brown);
+}
+.btn-outline:hover { background: var(--brown); color: #fff; }
+
+/* ===== Mobile: single column + hide quick contact card ===== */
+@media (max-width: 900px) {
+  .contact-intro-flex {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 760px) {
+  .quick-contact-card { display: none; }  /* hides the card on mobile */
+}
+
+/* ===== Quick contact card — enlarged & bold ===== */
+.quick-contact-card {
+  background: #fff;
+  border: 2px solid #B08968;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow:
+    0 6px 16px rgba(58, 42, 32, 0.08),
+    0 32px 60px rgba(58, 42, 32, 0.18);
+  transform: scale(1.03);
+}
+.quick-contact-card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.quick-contact-card .card-sub {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 18px;
+}
+
+/* Make the grid column wider so the enlarged card has room */
+.contact-intro-flex {
+  grid-template-columns: 1.1fr 380px;
+  gap: 48px;
+}
+
+/* Quick list rows — bigger and bolder */
+.quick-list { gap: 12px; }
+.quick-list li {
+  padding: 14px 16px;
+  border: 1.5px solid rgba(176, 137, 104, 0.55);
+  border-radius: 12px;
+  background: #fff;
+}
+.qc-label {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+.qc-value {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--brown);
+}
+.qc-value.plain-link:hover { color: var(--brown); }
+
+/* Mobile: still hide the card */
+@media (max-width: 760px) {
+  .quick-contact-card { display: none; }
+  .contact-intro-flex { grid-template-columns: 1fr; gap: 0; }
+}
+
+/* Email link — noticeable, no underline */
+.plain-link {
+  text-decoration: none;
+  color: var(--brown);
+  font-weight: 800;
+  border-bottom: none;
+}
+.plain-link:hover {
+  text-decoration: none;
+  color: var(--brown);
+  opacity: 0.8;
+}
+
+/* Also remove the underline from any <a> inside .big paragraphs */
+.big a {
+  text-decoration: none;
+  color: var(--brown);
+  font-weight: 800;
+}
+.big a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* Email link — force no underline, high specificity */
+a.plain-link,
+.contact-card a.plain-link,
+.contact-note-card a.plain-link,
+.quick-contact-card a.plain-link,
+.contact-hero-card a.plain-link,
+p.big a.plain-link,
+.big a.plain-link {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  color: var(--brown) !important;
+  font-weight: 800 !important;
+}
+a.plain-link:hover,
+.big a.plain-link:hover {
+  text-decoration: none !important;
+  opacity: 0.8;
 }
