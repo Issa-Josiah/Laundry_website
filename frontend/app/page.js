@@ -1,7 +1,13 @@
+import Link from "next/link";
+import ContactForm from "./ContactForm";
+import Nav from "./Nav";
+import SocialLinks from "./SocialLinks";
 import { siteData as d } from "../data/mockData";
 
-export default function Home() {
+export default async function Home({ searchParams }) {
+  const { service } = await searchParams; // set when "Inquire about this service" is clicked
   const c = d.contact;
+  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.mapsQuery)}`;
   return (
     <main>
       {/* HEADER */}
@@ -21,11 +27,7 @@ export default function Home() {
               <small>{d.header.tagline}</small>
             </span>
           </a>
-          <nav className="nav">
-            {d.header.nav.map((n) => (
-              <a key={n.href} href={n.href}>{n.label}</a>
-            ))}
-          </nav>
+          <Nav items={d.header.nav} />
         </div>
       </header>
 
@@ -59,9 +61,12 @@ export default function Home() {
                 <span className="num">{s.id}</span>
                 <h3>{s.title}</h3>
                 <p>{s.description}</p>
-                <p className="meta">{s.pricingRule}</p>
-                <p className="meta">{s.note}</p>
-                <a href="#contact" className="btn">Inquire about this service</a>
+                <Link
+                  href={`/?service=${encodeURIComponent(s.title)}#contact`}
+                  className="btn"
+                >
+                  Inquire about this service
+                </Link>
               </article>
             ))}
           </div>
@@ -74,11 +79,11 @@ export default function Home() {
 
           <div id="preference">
             <h3>Your laundry. Your preference.</h3>
-            <p className="lead">Tell us your preferred fabric softener or detergent when you inquire.</p>
+            <p className="lead">Tell us your preferred fabric softener when you inquire.</p>
             <div className="detergents">
               {d.detergents.map((x) => (
                 <div key={x.id} className="det">
-                  <img src={x.image} alt={x.name} />
+                  {x.image && <img src={x.image} alt={x.name} />}
                   {x.name}
                 </div>
               ))}
@@ -88,7 +93,8 @@ export default function Home() {
           <div className="band" style={{ marginTop: 36 }}>
             <h3>Tired of handwashing?</h3>
             <h3>We pick. We wash. We deliver.</h3>
-            <p>Free pickup &amp; delivery in Kirigiti Ridge, near Todas Restaurant. Fast · Reliable · Hassle-free.</p>
+            <p>Free pickup &amp; delivery in Kirigiti Riabai, near Todas Restaurant. Fast · Reliable · Hassle-free.</p>
+            <a href="#contact" className="btn">Contact us for pickup</a>
           </div>
         </div>
       </section>
@@ -101,7 +107,11 @@ export default function Home() {
           <div className="gallery">
             {d.gallery.map((g) => (
               <figure key={g.id}>
-                <img src={g.image} alt={g.caption} />
+                {g.image ? (
+                  <img src={g.image} alt={g.caption} />
+                ) : (
+                  <div className="ph">Photo coming soon</div>
+                )}
                 <figcaption>{g.caption}</figcaption>
               </figure>
             ))}
@@ -143,24 +153,42 @@ export default function Home() {
           <h2>Fresh starts here.</h2>
           <p className="lead">Visit us or contact us for any inquiries. Speak with us about prices, drop-off, collection, pickup or order updates.</p>
 
-          <div className="contact-card">
-            <h3>{c.place}</h3>
-            <p>{c.landmark}</p>
-            <p className="small">{c.hours}</p>
-            <a href={c.mapsUrl} target="_blank" rel="noreferrer" className="btn">Get directions on Google Maps</a>
-            <p className="small">{c.note}</p>
-            <p className="big">Call: {c.phone}</p>
-            <p className="big">WhatsApp: {c.phone}</p>
-            <div className="btn-row">
-              <a href={`tel:${c.phone.replace(/\s/g, "")}`} className="btn">Call us</a>
-              <a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noreferrer" className="btn">WhatsApp us</a>
+          <div className="contact-grid">
+            <div className="contact-card">
+              <h3>{c.place}</h3>
+              <p className="line">{c.landmark}</p>
+
+              <div className="hours">
+                {c.hours.map((h) => (
+                  <div key={h.days} className="hours-row">
+                    <span>{h.days}</span>
+                    <span>{h.time}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a href={mapsHref} target="_blank" rel="noreferrer" className="btn">Get directions on Google Maps</a>
+              <p className="line">{c.note}</p>
+
+              <p className="big">Call: {c.phone}</p>
+              <p className="big">WhatsApp: {c.whatsappDisplay}</p>
+              <p className="big">Email: <a href={`mailto:${c.email}`}>{c.email}</a></p>
+
+              <div className="btn-row">
+                <a href={`tel:${c.phone.replace(/\s/g, "")}`} className="btn">Call us</a>
+                <a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noreferrer" className="btn">WhatsApp us</a>
+              </div>
+              <SocialLinks contact={c} />
             </div>
-            <div className="socials">
-              <a href={`https://wa.me/${c.whatsapp}`} className="social wa" aria-label="WhatsApp">WA</a>
-              <a href="#" className="social" aria-label="Instagram">IG</a>
-              <a href="#" className="social" aria-label="X">X</a>
-              <a href="#" className="social" aria-label="TikTok">TT</a>
-            </div>
+
+            <ContactForm
+              key={service || "none"}
+              initialService={service}
+              services={d.services.map((x) => x.title)}
+              softeners={d.detergents.map((x) => x.name)}
+              whatsapp={c.whatsapp}
+              business={d.header.brandName}
+            />
           </div>
         </div>
       </section>
@@ -177,13 +205,16 @@ export default function Home() {
             <div>
               <h4>Visit us</h4>
               <p>{c.place}, near Todas Restaurant</p>
-              <p>Monday – Saturday: 8:00 AM – 5:00 PM</p>
-              <p>Sunday available upon request</p>
+              {c.hours.map((h) => (
+                <p key={h.days}>{h.days}: {h.time}</p>
+              ))}
             </div>
             <div>
               <h4>Let&apos;s lighten your load</h4>
               <p>{c.phone}</p>
-              <p>Visit Us or Contact Us for any inquiries.</p>
+              <p>{c.email}</p>
+              <SocialLinks contact={c} />
+              <p style={{ marginTop: 10 }}>Visit Us or Contact Us for any inquiries.</p>
             </div>
           </div>
           <p className="copy">© 2026 {d.name}</p>
