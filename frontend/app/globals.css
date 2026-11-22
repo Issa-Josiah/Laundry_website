@@ -42,7 +42,7 @@ h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
 section[id] { scroll-margin-top: 64px; }
 
 /* Hero */
-.hero { background: #EBF7FF; padding: 64px 0; }
+.hero { background: #EBF7FF; padding: 24px 0 64px; }
 .hero .eyebrow { font-size: 12px; }
 .hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
