@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
-// Desktop: links in a row. Phone: a menu button that opens a dropdown.
 export default function Nav({ items }) {
   const [open, setOpen] = useState(false);
   return (
@@ -19,9 +19,9 @@ export default function Nav({ items }) {
       </button>
       <nav className={`nav${open ? " open" : ""}`}>
         {items.map((n) => (
-          <a key={n.href} href={n.href} onClick={() => setOpen(false)}>
+          <Link key={n.href} href={n.href} onClick={() => setOpen(false)}>
             {n.label}
-          </a>
+          </Link>
         ))}
       </nav>
     </>
