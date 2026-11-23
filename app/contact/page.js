@@ -5,10 +5,14 @@ import { siteData as d } from "../../data/mockData";
 
 export const metadata = {
   title: "Contact",
-  description:
-    "Visit us at Kirigiti Center, near Todas Restaurant. Call, WhatsApp or send an inquiry.",
+  description: "Visit us at Kirigiti Center, near Todas Restaurant. Call, WhatsApp or send an inquiry.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact | King's DryCleaners",
+    description: "Visit us at Kirigiti Center, near Todas Restaurant. Call, WhatsApp or send an inquiry.",
+    url: "/contact",
+  },
 };
-
 export default function ContactPage() {
   const c = d.contact;
   const telHref = `tel:${c.phone.split(" or ")[0].replace(/\s/g, "")}`;

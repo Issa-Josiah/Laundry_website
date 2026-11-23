@@ -4,6 +4,12 @@ export const metadata = {
   title: "Gallery",
   description:
     "Freshly folded laundry, pressed garments and cleaning work from King's DryCleaners and Laundry.",
+      alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact | King's DryCleaners",
+    description: "Visit us at Kirigiti Center, near Todas Restaurant. Call, WhatsApp or send an inquiry.",
+    url: "/contact",
+  },
 };
 
 export default function GalleryPage() {
