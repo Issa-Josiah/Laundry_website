@@ -1,139 +1,43 @@
 import Link from "next/link";
-import ContactForm from "./ContactForm";
-import Nav from "./Nav";
-import SocialLinks from "./SocialLinks";
 import { siteData as d } from "../data/mockData";
 
-export default async function Home({ searchParams }) {
-  const { service } = await searchParams; // set when "Inquire about this service" is clicked
-  const c = d.contact;
-  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.mapsQuery)}`;
-  return (
-    <main>
-      {/* HEADER */}
-      <header className="header">
-        <div className="container header-inner">
-          <a href="#home" className="logo">
-            {d.header.logo.show && (
-              <img
-                className="logo-img"
-                src={d.header.logo.src}
-                alt={d.header.logo.alt}
-                style={{ width: d.header.logo.width, height: d.header.logo.height }}
-              />
-            )}
-            <span className="logo-text">
-              <strong>{d.header.brandName}</strong>
-              <small>{d.header.tagline}</small>
-            </span>
-          </a>
-          <Nav items={d.header.nav} />
-        </div>
-      </header>
+export const metadata = {
+  title: "Home",
+  description:
+    "You wear it, we care for it. Laundry, dry-cleaning, carpets, duvets, curtains and fumigation at Kirigiti Center.",
+};
 
-      {/* HERO */}
-      <section id="home" className="hero">
+export default function Home() {
+  const featured = d.services.slice(0, 3);
+
+  return (
+    <>
+      {/* ===== HERO ===== */}
+      <section className="hero hero--tall hero--inset">
         <div className="container hero-grid">
           <div>
             <p className="eyebrow">Laundry calling? Kings coming!</p>
             <h1>{d.hero.title}</h1>
             <p>{d.hero.subtitle}</p>
             <div className="btn-row">
-              <a href="#services" className="btn">Explore our services</a>
-              <a href="#preference" className="btn">Visit our shop</a>
+              <Link href="/services" className="btn">Explore our services</Link>
+              <Link href="/find-us#map" className="btn">Visit our shop</Link>
             </div>
             <span className="tag">{d.hero.locationTag}</span>
           </div>
-          <img className="hero-img" src={d.hero.heroImage} alt="Basket of freshly folded laundry" />
+          <img
+            className="hero-img"
+            src={d.hero.heroImage}
+            alt="Basket of freshly folded laundry"
+          />
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section id="services" className="section">
+      {/* ===== STEPS ===== */}
+      <section className="section">
         <div className="container">
-          <p className="eyebrow">Care, down to the last fold</p>
-          <h2>A clean for every need.</h2>
-          <p className="lead">Final prices depend on weight, material, size and quantity. Contact us for a confirmed price.</p>
-
-          <div className="services-grid">
-            {d.services.map((s) => (
-              <article key={s.id} className="card">
-                <span className="num">{s.id}</span>
-                <h3>{s.title}</h3>
-                <p>{s.description}</p>
-                <Link
-                  href={`/?service=${encodeURIComponent(s.title)}#contact`}
-                  className="btn"
-                >
-                  Inquire about this service
-                </Link>
-              </article>
-            ))}
-          </div>
-
-          <div className="band">
-            <h3>{d.bulk.title}</h3>
-            <p>{d.bulk.text}</p>
-            <a href="#contact" className="btn btn-light">{d.bulk.cta}</a>
-          </div>
-
-          <div id="preference">
-            <h3>Your laundry. Your preference.</h3>
-            <p className="lead">Tell us your preferred fabric softener when you inquire.</p>
-            <div className="detergents">
-              {d.detergents.map((x) => (
-                <div key={x.id} className="det">
-                  {x.image && <img src={x.image} alt={x.name} />}
-                  {x.name}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="band" style={{ marginTop: 36 }}>
-            <h3>Tired of handwashing?</h3>
-            <h3>We pick. We wash. We deliver.</h3>
-            <p>Free pickup &amp; delivery in Kirigiti Riabai, near Todas Restaurant. Fast · Reliable · Hassle-free.</p>
-            <a href="#contact" className="btn">Contact us for pickup</a>
-          </div>
-        </div>
-      </section>
-
-      {/* GALLERY */}
-      <section id="gallery" className="section gallery-wrap">
-        <div className="container">
-          <p className="eyebrow">A look at fresh</p>
-          <h2>Care you can see.</h2>
-          <div className="gallery">
-            {d.gallery.map((g) => (
-              <figure key={g.id}>
-                {g.image ? (
-                  <img src={g.image} alt={g.caption} />
-                ) : (
-                  <div className="ph">Photo coming soon</div>
-                )}
-                <figcaption>{g.caption}</figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT + STEPS */}
-      <section id="about" className="section">
-        <div className="container">
-          <div className="about-grid">
-            <img src={d.about.image} alt="Wash, Dry, Fold sign" />
-            <div>
-              <p className="eyebrow">{d.about.eyebrow}</p>
-              <h2>{d.about.title}</h2>
-              <p>{d.about.text}</p>
-              <p className="highlight">{d.about.highlight}</p>
-              <p>{d.about.text2}</p>
-            </div>
-          </div>
-
-          <h2 style={{ marginTop: 56 }}>Simple from drop-off to fresh.</h2>
+          <p className="eyebrow">From drop-off to fresh</p>
+          <h2>Simple from start to finish.</h2>
           <div className="steps">
             {d.steps.map((s) => (
               <div key={s.id} className="step">
@@ -146,80 +50,71 @@ export default async function Home({ searchParams }) {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="section contact">
+      {/* ===== FEATURED SERVICES ===== */}
+      <section className="section services-section">
         <div className="container">
-          <p className="eyebrow">Let&apos;s lighten your load</p>
-          <h2>Fresh starts here.</h2>
-          <p className="lead">Visit us or contact us for any inquiries. Speak with us about prices, drop-off, collection, pickup or order updates.</p>
+          <p className="eyebrow">Care, down to the last fold</p>
+          <h2>A clean for every need.</h2>
+          <p className="lead">
+            Final prices depend on weight, material, size and quantity.
+            Contact us for a confirmed price.
+          </p>
 
-          <div className="contact-grid">
-            <div className="contact-card">
-              <h3>{c.place}</h3>
-              <p className="line">{c.landmark}</p>
+          <div className="services-grid three" style={{ marginTop: 28 }}>
+            {featured.map((s) => (
+              <article key={s.id} className="card service-card">
+                {s.image ? (
+                  <img className="service-img" src={s.image} alt={s.title} />
+                ) : (
+                  <div className="service-img ph">{s.title}</div>
+                )}
+                <div className="service-body">
+                  <span className="num">{s.id}</span>
+                  <h3>{s.title}</h3>
+                  <p>{s.description}</p>
+                  <Link
+                    href={`/contact?service=${encodeURIComponent(s.title)}#contact-form`}
+                    className="btn"
+                  >
+                    Inquire
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
 
-              <div className="hours">
-                {c.hours.map((h) => (
-                  <div key={h.days} className="hours-row">
-                    <span>{h.days}</span>
-                    <span>{h.time}</span>
-                  </div>
-                ))}
-              </div>
-
-              <a href={mapsHref} target="_blank" rel="noreferrer" className="btn">Get directions on Google Maps</a>
-              <p className="line">{c.note}</p>
-
-              <p className="big">Call: {c.phone}</p>
-              <p className="big">WhatsApp: {c.whatsappDisplay}</p>
-              <p className="big">Email: <a href={`mailto:${c.email}`}>{c.email}</a></p>
-
-              <div className="btn-row">
-                <a href={`tel:${c.phone.replace(/\s/g, "")}`} className="btn">Call us</a>
-                <a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noreferrer" className="btn">WhatsApp us</a>
-              </div>
-              <SocialLinks contact={c} />
-            </div>
-
-            <ContactForm
-              key={service || "none"}
-              initialService={service}
-              services={d.services.map((x) => x.title)}
-              softeners={d.detergents.map((x) => x.name)}
-              whatsapp={c.whatsapp}
-              business={d.header.brandName}
-            />
+          <div className="btn-row" style={{ marginTop: 28 }}>
+            <Link href="/services" className="btn">See more services →</Link>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="footer">
+      {/* ===== CTA ===== */}
+      <section className="section cta-section">
         <div className="container">
-          <div className="footer-grid">
-            <div>
-              <h4>{d.name}</h4>
-              <p>Tired of Handwashing?</p>
-              <p>You wear it, We Care for it!</p>
+          <div className="cta-card">
+            <div className="cta-content">
+              <p className="eyebrow" style={{ color: "rgba(255,255,255,0.85)" }}>
+                Fresh starts here
+              </p>
+              <h2 className="cta-title">Ready when you are.</h2>
+              <p className="cta-sub">
+                View our gallery or get in touch — we&apos;ll pick it up from there.
+              </p>
+              <div className="btn-row" style={{ marginTop: 20 }}>
+                <Link href="/gallery" className="btn btn-light">View gallery</Link>
+                <Link href="/contact" className="btn btn-light">Contact us</Link>
+              </div>
             </div>
-            <div>
-              <h4>Visit us</h4>
-              <p>{c.place}, near Todas Restaurant</p>
-              {c.hours.map((h) => (
-                <p key={h.days}>{h.days}: {h.time}</p>
-              ))}
-            </div>
-            <div>
-              <h4>Let&apos;s lighten your load</h4>
-              <p>{c.phone}</p>
-              <p>{c.email}</p>
-              <SocialLinks contact={c} />
-              <p style={{ marginTop: 10 }}>Visit Us or Contact Us for any inquiries.</p>
+
+            <div className="cta-decor" aria-hidden="true">
+              <span className="cta-bubble" />
+              <span className="cta-bubble cta-bubble--sm" />
+              <span className="cta-bubble cta-bubble--md" />
             </div>
           </div>
-          <p className="copy">© 2026 {d.name}</p>
         </div>
-      </footer>
-    </main>
+      </section>
+    </>
   );
 }

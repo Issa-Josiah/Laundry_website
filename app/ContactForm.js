@@ -1,9 +1,14 @@
 "use client";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
-// Builds a WhatsApp message from the form and opens WhatsApp with it.
-export default function ContactForm({ services, softeners, whatsapp, business, initialService }) {
-  const [service, setService] = useState(services.includes(initialService) ? initialService : "");
+export default function ContactForm({ services, softeners, whatsapp, business }) {
+  const searchParams = useSearchParams();
+  const initialService = searchParams.get("service") || "";
+
+  const [service, setService] = useState(
+    services.includes(initialService) ? initialService : ""
+  );
   const [softener, setSoftener] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
@@ -12,22 +17,33 @@ export default function ContactForm({ services, softeners, whatsapp, business, i
   function handleSubmit(e) {
     e.preventDefault();
     if (!service) return setError("Please choose a service.");
-    if (phone.replace(/\D/g, "").length < 9) return setError("Please enter a valid phone number.");
+    if (phone.replace(/\D/g, "").length < 9)
+      return setError("Please enter a valid phone number.");
     setError("");
 
-    const lines = [`Hello ${business}, I would like to inquire about: ${service}.`];
+    // Build line-by-line message. Use \r\n — WhatsApp respects this better than \n
+    const lines = [];
+    lines.push(`Hello ${business},`);
+    lines.push("");
+    lines.push(`I would like to inquire about: *${service}*`);
     if (softener) lines.push(`Preferred fabric softener: ${softener}`);
     lines.push(`My phone number: ${phone.trim()}`);
-    if (message.trim()) lines.push("", message.trim());
+    if (message.trim()) {
+      lines.push("");
+      lines.push(message.trim());
+    }
 
-    const url = `https://wa.me/${whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`;
+    const text = lines.join("\r\n");
+    const url = `https://wa.me/${whatsapp}?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   }
 
   return (
     <div className="form-card">
       <h3>Send us an inquiry</h3>
-      <p className="hint">Choose your service, add your number and we will continue on WhatsApp.</p>
+      <p className="hint">
+        Choose your service, add your number and we will continue on WhatsApp.
+      </p>
 
       <form onSubmit={handleSubmit}>
         <div className="field">
@@ -53,7 +69,13 @@ export default function ContactForm({ services, softeners, whatsapp, business, i
 
         <div className="field">
           <label htmlFor="phone">Phone number</label>
-          <input id="phone" type="tel" placeholder="e.g. 0700 000 000" value={phone} onChange={(e) => setPhone(e.target.value)} />
+          <input
+            id="phone"
+            type="tel"
+            placeholder="e.g. 0700 000 000"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
         </div>
 
         <div className="field">
