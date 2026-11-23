@@ -1,0 +1,160 @@
+{
+  "hero": {
+    "eyebrow": "Care, down to the last fold",
+    "title": "A clean for every need.",
+    "lead": "From everyday laundry to carpets, duvets and upholstery — everything you care for, cleaned with care. Final prices depend on weight, material, size and quantity.",
+    "pricingTitle": "How pricing works",
+    "pricingItems": [
+      {
+        "label": "Weight-based",
+        "text": "Laundry & wash-and-fold"
+      },
+      {
+        "label": "Per item",
+        "text": "Dry-cleaning, ironing, shoes"
+      },
+      {
+        "label": "Per sq. metre",
+        "text": "Carpets, rugs, sofas"
+      }
+    ],
+    "pricingFoot": "Bulk orders get discounts. Ask us for a confirmed price."
+  },
+  "services": [
+    {
+      "id": "01",
+      "title": "Wash & Fold",
+      "description": "Your everyday clothes, washed, dried and neatly folded, ready to put away.",
+      "image": "/images/wash-fold.png"
+    },
+    {
+      "id": "02",
+      "title": "Laundry",
+      "description": "Regular household laundry, sorted by colour and fabric for a fresh, even clean.",
+      "image": "/images/laundry.png"
+    },
+    {
+      "id": "03",
+      "title": "Dry Cleaning",
+      "description": "Specialist care for suits, dresses and delicate garments that can't go in a washing machine.",
+      "image": "/images/dry-cleaning.png"
+    },
+    {
+      "id": "04",
+      "title": "Ironing & Pressing",
+      "description": "A crisp, polished finish for your work and occasion wear.",
+      "image": ""
+    },
+    {
+      "id": "05",
+      "title": "Express Cleaning",
+      "description": "In a hurry? Get a faster turnaround on your laundry, subject to availability.",
+      "image": ""
+    },
+    {
+      "id": "06",
+      "title": "Duvet Cleaning",
+      "description": "Deep-cleaned and freshened duvets, so your bed feels comfortable again.",
+      "image": ""
+    },
+    {
+      "id": "07",
+      "title": "Curtain Cleaning",
+      "description": "Dust, stains and odours lifted from sheers and heavier curtains alike.",
+      "image": ""
+    },
+    {
+      "id": "08",
+      "title": "Shoe Cleaning",
+      "description": "Sneakers, canvas and casual shoes cleaned and refreshed to look their best.",
+      "image": ""
+    },
+    {
+      "id": "09",
+      "title": "Stain Removal",
+      "description": "Targeted treatment for stubborn marks on clothes and fabrics, with care matched to the material.",
+      "image": ""
+    },
+    {
+      "id": "10",
+      "title": "Fumigation",
+      "description": "Treatment for homes and spaces to keep pests away, assessed on request.",
+      "image": ""
+    },
+    {
+      "id": "11",
+      "title": "Carpet Cleaning",
+      "description": "Deep cleaning for rugs and carpets, lifting dirt and odours from the fibres.",
+      "image": ""
+    },
+    {
+      "id": "12",
+      "title": "Sofa / Upholstery Cleaning",
+      "description": "Fresh, clean sofas and upholstered furniture, with care for the fabric.",
+      "image": ""
+    },
+    {
+      "id": "13",
+      "title": "Leather and Suede Cleaning",
+      "description": "Gentle cleaning and care for leather and suede jackets, bags and shoes.",
+      "image": ""
+    },
+    {
+      "id": "14",
+      "title": "Free Pick-up and Delivery",
+      "description": "We collect from you and bring it back clean. Contact us to confirm your area.",
+      "image": ""
+    }
+  ],
+  "bulk": {
+    "title": "More laundry? Let's talk.",
+    "text": "Discounts are available for bulk orders. Share your items and quantities with us for a confirmed price.",
+    "cta": "Discuss a bulk order"
+  },
+  "detergents": [
+    {
+      "id": 1,
+      "name": "Downy",
+      "image": "/images/downy.png"
+    },
+    {
+      "id": 2,
+      "name": "Sta-Soft",
+      "image": "/images/stasoft.png"
+    },
+    {
+      "id": 3,
+      "name": "Vanish",
+      "image": "/images/vanish.png"
+    },
+    {
+      "id": 4,
+      "name": "Softlan",
+      "image": "/images/softlan.png"
+    },
+    {
+      "id": 5,
+      "name": "Cationic softener",
+      "image": "/images/cationic.png"
+    },
+    {
+      "id": 6,
+      "name": "Deodorizer",
+      "image": "/images/deodorizer.png"
+    },
+    {
+      "id": 7,
+      "name": "Prespotter",
+      "image": "/images/prespotter.png"
+    },
+    {
+      "id": 8,
+      "name": "Starch spray",
+      "image": "/images/starch-spray.png"
+    }
+  ],
+  "preference": {
+    "title": "Your laundry. Your preference.",
+    "lead": "Tell us your preferred fabric softener when you inquire."
+  }
+}

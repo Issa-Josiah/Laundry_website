@@ -1,0 +1,35 @@
+{
+  "welcome": {
+    "eyebrow": "Welcome to King's",
+    "title": "Good care starts close to home.",
+    "locationLabel": "Location",
+    "locationValue": "Kirigiti Center, Along Kirigiti Riabai Road. Near Todas Restaurant.",
+    "trustPhrase": "Trusted by families and businesses around Kirigiti — you wear it, we care for it.",
+    "image": "/uploads/1795463838615-about_image.jpg"
+  },
+  "steps": [
+    {
+      "id": "01",
+      "title": "Bring it in or arrange pickup",
+      "text": "Visit us or contact us for any inquiries, or to arrange a pickup."
+    },
+    {
+      "id": "02",
+      "title": "We assess, weigh and price",
+      "text": "Your items are checked and priced by weight, type or material before processing."
+    },
+    {
+      "id": "03",
+      "title": "Fresh, finished and ready",
+      "text": "We'll call or text when your order is ready for pickup or agreed delivery."
+    }
+  ],
+  "goodCare": {
+    "eyebrow": "Great care. Complete cleaning.",
+    "title": "Good care starts close to home.",
+    "text": "Kings DryCleaners and Laundry serves you with one simple idea: make it easier to care for your clothes and your home, all in one place.",
+    "highlight": "Not just clothes. Everything you care for.",
+    "text2": "From everyday laundry and dry-cleaning to carpets, duvets, curtains, pressing and fumigation. We match the price to your items instead of offering a one-size-fits-all price.",
+    "image": "/images/wash-dry-fold.png"
+  }
+}

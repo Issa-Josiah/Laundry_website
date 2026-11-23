@@ -104,7 +104,7 @@ export const siteData = {
     mapsQuery: "Kirigiti Center, Kirigiti Riabai Road, Todas Restaurant, Kenya",
     note: "Contact us to arrange pickup, delivery, express turnaround and order updates.",
     phone: "+254 792 590 662 or +254 795 318 789",
-    whatsapp: "25492590662",
+    whatsapp: "+254792590662",
     whatsappDisplay: "+254 792 590 662",
     email: "kingorid449@gmail.com",
     facebook: "",

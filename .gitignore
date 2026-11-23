@@ -16,7 +16,8 @@ project-dump.txt
 # next.js
 /.next/
 /out/
-
+.open-next/
+.worker-next/
 # production
 /build
 

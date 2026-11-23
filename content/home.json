@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "eyebrow": "Laundry calling? Kings coming!",
+    "title": "You wear it, We Care for it!",
+    "subtitle": "From your everyday favourites to the fabrics that make your house a home, we take care of the cleaning, so you can get on with stress-free living.",
+    "locationTag": "Kirigiti Center, Along Kirigiti Riabai Road. Near Todas Restaurant.",
+    "heroImage": "/images/hero-basket.png"
+  },
+  "steps": [
+    {
+      "id": "01",
+      "title": "Bring it in or arrange pickup",
+      "text": "Visit us or contact us for any inquiries, or to arrange a pickup."
+    },
+    {
+      "id": "02",
+      "title": "We assess, weigh and price",
+      "text": "Your items are checked and priced by weight, type or material before processing."
+    },
+    {
+      "id": "03",
+      "title": "Fresh, finished and ready",
+      "text": "We'll call or text when your order is ready for pickup or agreed delivery."
+    }
+  ],
+  "featuredServices": [
+    {
+      "id": "01",
+      "title": "Wash & Fold",
+      "description": "Your everyday clothes, washed, dried and neatly folded, ready to put away.",
+      "image": "/uploads/1795462704605-laundry.png"
+    },
+    {
+      "id": "02",
+      "title": "Laundry",
+      "description": "Regular household laundry, sorted by colour and fabric for a fresh, even clean.",
+      "image": "/uploads/1795464014179-drycleaning.png"
+    },
+    {
+      "id": "03",
+      "title": "Dry Cleaning",
+      "description": "Specialist care for suits, dresses and delicate garments that can't go in a washing machine.",
+      "image": "/uploads/1795465999704-image_about1.jpg"
+    }
+  ]
+}
