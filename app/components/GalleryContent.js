@@ -14,7 +14,7 @@ export default function GalleryContent({ content }) {
       <section className="section">
         <div className="container">
           {visible.length === 0 ? (
-            <div className="gallery-empty"><p>Photos are on the way — check back soon.</p></div>
+            <div className="gallery-empty"><p>Photos are on the way  check back soon.</p></div>
           ) : (
             <div className="gallery-grid">
               {visible.map((g) => (
