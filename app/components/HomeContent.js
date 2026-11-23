@@ -7,7 +7,7 @@ const EMPTY_IMAGE =
 export default function HomeContent({
   content,
   showEmptyImageSlots = false,
-}) {
+}) { 
   const hasHeroImage =
     typeof content.hero.heroImage === "string" &&
     content.hero.heroImage.trim() !== "";
