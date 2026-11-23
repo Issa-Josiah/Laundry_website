@@ -1,4 +1,6 @@
 # King's DryCleaners and Laundry — Website
+site is published here:  https://main.laundry-website-eju.pages.dev/
+
 
 Multi-page marketing site for **King's DryCleaners and Laundry**, Kirigiti Center, Kenya.
 
