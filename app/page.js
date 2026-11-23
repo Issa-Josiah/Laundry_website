@@ -5,6 +5,12 @@ export const metadata = {
   title: "Home",
   description:
     "You wear it, we care for it. Laundry, dry-cleaning, carpets, duvets, curtains and fumigation at Kirigiti Center.",
+      alternates: { canonical: "/home" },
+  openGraph: {
+    title: "Home | King's DryCleaners",
+    description: "You wear it, we care for it. Laundry, dry-cleaning, carpets, duvets, curtains and fumigation at Kirigiti Center.",
+    url: "/home",
+  },
 };
 
 export default function Home() {

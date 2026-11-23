@@ -6,6 +6,12 @@ export const metadata = {
   title: "About Us",
   description:
     "Good care starts close to home. King's DryCleaners serves Kirigiti Center with laundry, dry-cleaning and home fabric care.",
+      alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Us | King's DryCleaners",
+    description: "Good care starts close to home. King's DryCleaners serves Kirigiti Center with laundry, dry-cleaning and home fabric care.",
+    url: "/about",
+  },
 };
 
 export default function AboutPage() {

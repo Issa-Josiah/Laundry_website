@@ -3,8 +3,13 @@ import { siteData as d } from "../../data/mockData";
 
 export const metadata = {
   title: "Services",
-  description:
-    "Wash & fold, dry cleaning, duvets, curtains, carpets, ironing, shoe cleaning and more. Prices confirmed per item.",
+  description: "Wash & fold, dry cleaning, duvets, curtains, carpets, ironing, shoe cleaning and more. Prices confirmed per item.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Services | King's DryCleaners",
+    description: "Wash & fold, dry cleaning, duvets, curtains, carpets, ironing, shoe cleaning and more.",
+    url: "/services",
+  },
 };
 
 export default function ServicesPage() {

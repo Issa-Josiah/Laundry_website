@@ -4,6 +4,12 @@ export const metadata = {
   title: "Find Us",
   description:
     "Find King's DryCleaners and Laundry at Kirigiti Center, along Kirigiti Riabai Road, near Todas Restaurant. Call us if you get lost.",
+      alternates: { canonical: "/find-us" },  
+    openGraph: {
+    title: "Find Us | King's DryCleaners",
+    description: "Find King's DryCleaners and Laundry at Kirigiti Center, along Kirigiti Riabai Road, near Todas Restaurant. Call us if you get lost.",
+    url: "/find-us",
+    },
 };
 
 export default function FindUsPage() {
