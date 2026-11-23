@@ -2,38 +2,158 @@
   "hero": {
     "eyebrow": "A look at fresh",
     "title": "Care you can see.",
-    "lead": "A glimpse of what leaves our shop — freshly folded, pressed and ready. More photos added as our work grows."
+    "lead": "A glimpse of what leaves our shop  freshly folded, pressed and ready. "
   },
   "gallery": [
-    { "id": 1, "caption": "Freshly folded", "image": "/images/folded.png" },
-    { "id": 2, "caption": "Pressed & ready", "image": "/images/pressed.png" },
-    { "id": 3, "caption": "Pressed with care", "image": "/images/iron.png" },
-    { "id": 4, "caption": "Everyday laundry care", "image": "/images/everyday.png" },
-    { "id": 5, "caption": "Shoe cleaning", "image": "/images/shoe-cleaning.png" },
-    { "id": 6, "caption": "Stain removal", "image": "/images/stain-removal.png" },
-    { "id": 7, "caption": "Curtain care", "image": "" },
-    { "id": 8, "caption": "Duvet cleaning", "image": "" },
-    { "id": 9, "caption": "Carpet refresh", "image": "" },
-    { "id": 10, "caption": "Sofa cleaning", "image": "" },
-    { "id": 11, "caption": "Leather care", "image": "" },
-    { "id": 12, "caption": "Delivery ready", "image": "" },
-    { "id": 13, "caption": "Sorting day", "image": "" },
-    { "id": 14, "caption": "Delicate garments", "image": "" },
-    { "id": 15, "caption": "Starching", "image": "" },
-    { "id": 16, "caption": "Folding station", "image": "" },
-    { "id": 17, "caption": "Shop front", "image": "" },
-    { "id": 18, "caption": "Behind the scenes", "image": "" },
-    { "id": 19, "caption": "Bundle ready", "image": "" },
-    { "id": 20, "caption": "Pressed shirts", "image": "" },
-    { "id": 21, "caption": "Baby clothes", "image": "" },
-    { "id": 22, "caption": "Bedding day", "image": "" },
-    { "id": 23, "caption": "Towels stacked", "image": "" },
-    { "id": 24, "caption": "Curtain drop", "image": "" },
-    { "id": 25, "caption": "Team at work", "image": "" },
-    { "id": 26, "caption": "Pickup van", "image": "" },
-    { "id": 27, "caption": "Customer drop-off", "image": "" },
-    { "id": 28, "caption": "Iron table", "image": "" },
-    { "id": 29, "caption": "Weekend batch", "image": "" },
-    { "id": 30, "caption": "Before & after", "image": "" }
+    {
+      "id": 1,
+      "caption": "Freshly folded",
+      "image": "/images/folded.png"
+    },
+    {
+      "id": 2,
+      "caption": "Pressed & ready",
+      "image": "/images/pressed.png"
+    },
+    {
+      "id": 3,
+      "caption": "Pressed with care",
+      "image": "/images/iron.png"
+    },
+    {
+      "id": 4,
+      "caption": "Everyday laundry care",
+      "image": "/images/everyday.png"
+    },
+    {
+      "id": 5,
+      "caption": "Shoe cleaning",
+      "image": "/images/shoe-cleaning.png"
+    },
+    {
+      "id": 6,
+      "caption": "Stain removal",
+      "image": "/images/stain-removal.png"
+    },
+    {
+      "id": 7,
+      "caption": "Curtain care",
+      "image": ""
+    },
+    {
+      "id": 8,
+      "caption": "Duvet cleaning",
+      "image": ""
+    },
+    {
+      "id": 9,
+      "caption": "Carpet refresh",
+      "image": ""
+    },
+    {
+      "id": 10,
+      "caption": "Sofa cleaning",
+      "image": ""
+    },
+    {
+      "id": 11,
+      "caption": "Leather care",
+      "image": ""
+    },
+    {
+      "id": 12,
+      "caption": "Delivery ready",
+      "image": ""
+    },
+    {
+      "id": 13,
+      "caption": "Sorting day",
+      "image": ""
+    },
+    {
+      "id": 14,
+      "caption": "Delicate garments",
+      "image": ""
+    },
+    {
+      "id": 15,
+      "caption": "Starching",
+      "image": ""
+    },
+    {
+      "id": 16,
+      "caption": "Folding station",
+      "image": ""
+    },
+    {
+      "id": 17,
+      "caption": "Shop front",
+      "image": ""
+    },
+    {
+      "id": 18,
+      "caption": "Behind the scenes",
+      "image": ""
+    },
+    {
+      "id": 19,
+      "caption": "Bundle ready",
+      "image": ""
+    },
+    {
+      "id": 20,
+      "caption": "Pressed shirts",
+      "image": ""
+    },
+    {
+      "id": 21,
+      "caption": "Baby clothes",
+      "image": ""
+    },
+    {
+      "id": 22,
+      "caption": "Bedding day",
+      "image": ""
+    },
+    {
+      "id": 23,
+      "caption": "Towels stacked",
+      "image": ""
+    },
+    {
+      "id": 24,
+      "caption": "Curtain drop",
+      "image": ""
+    },
+    {
+      "id": 25,
+      "caption": "Team at work",
+      "image": ""
+    },
+    {
+      "id": 26,
+      "caption": "Pickup van",
+      "image": ""
+    },
+    {
+      "id": 27,
+      "caption": "Customer drop-off",
+      "image": ""
+    },
+    {
+      "id": 28,
+      "caption": "Iron table",
+      "image": ""
+    },
+    {
+      "id": 29,
+      "caption": "Weekend batch",
+      "image": ""
+    },
+    {
+      "id": 30,
+      "caption": "Before & after",
+      "image": ""
+    }
   ]
 }
