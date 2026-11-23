@@ -7,24 +7,42 @@ export const metadata = {
 };
 
 export default function GalleryPage() {
+  // Only render items that actually have an image
+  const visible = d.gallery.filter((g) => g.image && g.image.trim() !== "");
+
   return (
-    <section className="section gallery-wrap">
-      <div className="container">
-        <p className="eyebrow">A look at fresh</p>
-        <h2>Care you can see.</h2>
-        <div className="gallery">
-          {d.gallery.map((g) => (
-            <figure key={g.id}>
-              {g.image ? (
-                <img src={g.image} alt={g.caption} />
-              ) : (
-                <div className="ph">Photo coming soon</div>
-              )}
-              <figcaption>{g.caption}</figcaption>
-            </figure>
-          ))}
+    <>
+      {/* ===== HERO ===== */}
+      <section className="gallery-hero">
+        <div className="container">
+          <p className="eyebrow">A look at fresh</p>
+          <h1>Care you can see.</h1>
+          <p className="lead">
+            A glimpse of what leaves our shop — freshly folded, pressed and
+            ready. More photos added as our work grows.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ===== GRID ===== */}
+      <section className="section">
+        <div className="container">
+          {visible.length === 0 ? (
+            <div className="gallery-empty">
+              <p>Photos are on the way — check back soon.</p>
+            </div>
+          ) : (
+            <div className="gallery-grid">
+              {visible.map((g) => (
+                <figure key={g.id} className="gallery-item">
+                  <img src={g.image} alt={g.caption} loading="lazy" />
+                  <figcaption>{g.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    </>
   );
 }

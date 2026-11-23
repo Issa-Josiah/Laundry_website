@@ -31,7 +31,7 @@ export default function FindUsPage() {
         </div>
 
         {/* Map embed */}
-        <div className="map-wrap">
+        <div className="map-wrap" id="map">
           <iframe
             title="Map to King's DryCleaners and Laundry"
             src={embedSrc}
@@ -43,7 +43,6 @@ export default function FindUsPage() {
             referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
-
         {/* Location info grid */}
         <div className="find-grid">
           <div className="contact-card">
