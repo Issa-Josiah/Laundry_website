@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  images: { unoptimized: true },
+  // Remove output: "export" — Workers handles the runtime
+  images: { unoptimized: true }, // keep this unless you configure Cloudflare Images
 };
 
 export default nextConfig;

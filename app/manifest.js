@@ -2,7 +2,7 @@ const SITE_URL = "https://kingslaundry.co.ke"; // ← change to your real domain
 
 export const dynamic = "force-static";
 export const revalidate = false;
-
+ 
 export default function manifest() {
   return {
     name: "King's DryCleaners and Laundry",

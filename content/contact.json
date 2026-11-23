@@ -1,0 +1,29 @@
+{
+  "intro": {
+    "eyebrow": "Contact King's DryCleaners",
+    "title": "Talk to the Kings team",
+    "lead": "Need a pickup, a quote, or help with dry-cleaning, carpets, duvets or curtains? Reach out and we'll respond the same day.",
+    "sendLabel": "Send a message",
+    "callLabel": "Call"
+  },
+  "quickContacts": {
+    "title": "Quick contacts",
+    "sub": "Pick the route that fits your request."
+  },
+  "main": {
+    "eyebrow": "Let's lighten your load",
+    "title": "Fresh starts here.",
+    "lead": "Visit us or contact us for any inquiries. Speak with us about prices, drop-off, collection, pickup or order updates.",
+    "place": "Kirigiti Center",
+    "landmark": "Along Kirigiti Riabai Road. Near Todas Restaurant.",
+    "note": "Contact us to arrange pickup, delivery, express turnaround and order updates.",
+    "phone": "+254 792 590 662 or +254 795 318 789",
+    "whatsapp": "25492590662",
+    "whatsappDisplay": "+254 792 590 662",
+    "email": "kingorid449@gmail.com",
+    "hours": [
+      { "days": "Monday – Saturday", "time": "07:00 AM – 21:00 PM" },
+      { "days": "Sunday", "time": "08:00 AM – 18:00 PM" }
+    ]
+  }
+}
