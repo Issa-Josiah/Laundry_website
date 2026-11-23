@@ -1,54 +1,112 @@
 "use client";
+
 import { useEffect, useState } from "react";
 
-export default function ServiceCarousel({ services }) {
+const EMPTY_IMAGE =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 420'%3E%3Crect width='640' height='420' fill='%23f1f5f9'/%3E%3Ctext x='320' y='210' text-anchor='middle' font-size='65' fill='%2394a3b8'%3E%2B%3C/text%3E%3C/svg%3E";
+
+export default function ServiceCarousel({
+  services = [],
+  editable = false,
+  showEmptyImageSlots = false,
+}) {
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
   useEffect(() => {
-    if (services.length === 0) return;
+    if (services.length <= 1) return;
+
     const interval = setInterval(() => {
-      // Fade out → swap → fade in
       setFade(false);
+
       setTimeout(() => {
-        setIndex((i) => (i + 1) % services.length);
+        setIndex((current) => (current + 1) % services.length);
         setFade(true);
-      }, 400); // fade-out duration
+      }, 400);
     }, 15000);
+
     return () => clearInterval(interval);
   }, [services.length]);
 
-  if (services.length === 0) return null;
+  useEffect(() => {
+    if (index >= services.length) {
+      setIndex(0);
+    }
+  }, [index, services.length]);
+
+  if (!services.length) return null;
+
   const current = services[index];
+
+  const hasImage =
+    typeof current.image === "string" &&
+    current.image.trim() !== "";
 
   return (
     <div className="carousel">
       <p className="eyebrow">What we offer</p>
-      <h2 style={{ marginBottom: 20 }}>Care, rotating through the day.</h2>
+
+      <h2 style={{ marginBottom: 20 }}>
+        Care, rotating through the day.
+      </h2>
 
       <div className={`carousel-card${fade ? " is-visible" : ""}`}>
         <div className="carousel-image">
-          {current.image ? (
-            <img src={current.image} alt={current.title} />
-          ) : (
-            <div className="ph">{current.title}</div>
+          {(hasImage || showEmptyImageSlots) && (
+            <img
+              src={hasImage ? current.image : EMPTY_IMAGE}
+              alt={current.title}
+              data-edit-image={
+                editable ? `featuredServices.${index}.image` : undefined
+              }
+              className={
+                editable && !hasImage ? "admin-service-image" : ""
+              }
+            />
           )}
         </div>
+
         <div className="carousel-body">
-          <span className="carousel-num">{current.id}</span>
-          <h3>{current.title}</h3>
-          <p>{current.description}</p>
+          <span
+            className="carousel-num"
+            data-edit={
+              editable ? `featuredServices.${index}.id` : undefined
+            }
+          >
+            {current.id}
+          </span>
+
+          <h3
+            data-edit={
+              editable ? `featuredServices.${index}.title` : undefined
+            }
+          >
+            {current.title}
+          </h3>
+
+          <p
+            data-edit={
+              editable
+                ? `featuredServices.${index}.description`
+                : undefined
+            }
+          >
+            {current.description}
+          </p>
         </div>
       </div>
 
       <div className="carousel-dots">
-        {services.map((s, i) => (
+        {services.map((service, i) => (
           <button
-            key={s.id}
+            key={service.id}
             type="button"
             className={`dot${i === index ? " active" : ""}`}
-            aria-label={`Show ${s.title}`}
-            onClick={() => setIndex(i)}
+            aria-label={`Show ${service.title}`}
+            onClick={() => {
+              setIndex(i);
+              setFade(true);
+            }}
           />
         ))}
       </div>

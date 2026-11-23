@@ -9,7 +9,7 @@
     { "id": 2, "caption": "Pressed & ready", "image": "/images/pressed.png" },
     { "id": 3, "caption": "Pressed with care", "image": "/images/iron.png" },
     { "id": 4, "caption": "Everyday laundry care", "image": "/images/everyday.png" },
-    { "id": 5, "caption": "Shoe cleaning", "image": "/images/shoe-cleaning.png" },       
+    { "id": 5, "caption": "Shoe cleaning", "image": "/images/shoe-cleaning.png" },
     { "id": 6, "caption": "Stain removal", "image": "/images/stain-removal.png" },
     { "id": 7, "caption": "Curtain care", "image": "" },
     { "id": 8, "caption": "Duvet cleaning", "image": "" },
