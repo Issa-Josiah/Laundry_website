@@ -1605,6 +1605,8 @@ a.plain-link:hover,
   .featured-carousel-item .carousel-image {
     height: 220px;
   }
+    .all-services-carousel {
+    display: none !important;}
 }
 
 
@@ -1622,7 +1624,7 @@ a.plain-link:hover,
     position: relative;
     padding: 0;
     overflow: hidden;
-    min-height: 560px;
+    min-height: 600px;
     display: flex;
     align-items: center;
   }
@@ -1632,13 +1634,21 @@ a.plain-link:hover,
     position: absolute;
     inset: 0;
     z-index: 0;
+  width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    filter: brightness(0.9);
+  overflow: hidden;
   }
+  /* Image = blurred full-bleed background */
   .welcome-section .welcome-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 0;
-    filter: brightness(0.75);
+    filter: blur(6px) brightness(0.6);
+    transform: scale(1.1); /* hides blur edges */
   }
 
   /* Container above the background */
@@ -1657,15 +1667,17 @@ a.plain-link:hover,
   /* Frosted glass card */
   .welcome-section .welcome-note {
     background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+
     border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 18px;
+    border-radius: 20px;
     padding: 28px 22px;
     color: #fff;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
   }
 
+  
   .welcome-section .welcome-note .eyebrow,
   .welcome-section .welcome-note h1 {
     color: #fff;
@@ -1688,65 +1700,17 @@ a.plain-link:hover,
 
   /* Buttons — make them readable on the glass */
   .welcome-section .welcome-note .btn {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.92);
     color: var(--brown);
-    border-color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.92);
   }
   .welcome-section .welcome-note .btn-outline {
     background: transparent;
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.85);
   }
   .welcome-section .welcome-note .btn-outline:hover {
     background: rgba(255, 255, 255, 0.15);
-  }
-  .welcome-section {
-    position: relative;
-    padding: 0;
-    overflow: hidden;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-  }
-
-  /* Image = blurred full-bleed background */
-  .welcome-section .welcome-image {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-  }
-  .welcome-section .welcome-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;
-    filter: blur(6px) brightness(0.6);
-    transform: scale(1.1); /* hides blur edges */
-  }
-
-  .welcome-section .container {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    padding: 48px 20px;
-  }
-
-  .welcome-section .welcome-grid {
-    display: block;
-    gap: 0;
-  }
-
-  /* Glass card */
-  .welcome-section .welcome-note {
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 20px;
-    padding: 28px 22px;
-    color: #fff;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
   }
 
   .welcome-section .welcome-note .eyebrow,
@@ -1762,20 +1726,6 @@ a.plain-link:hover,
     border-left-color: rgba(255, 255, 255, 0.7);
   }
 
-  /* Buttons readable on glass */
-  .welcome-section .welcome-note .btn {
-    background: rgba(255, 255, 255, 0.92);
-    color: var(--brown);
-    border-color: rgba(255, 255, 255, 0.92);
-  }
-  .welcome-section .welcome-note .btn-outline {
-    background: transparent;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.85);
-  }
-  .welcome-section .welcome-note .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.15);
-  }
   .welcome-note--pop {
     opacity: 0;
     transform: translateY(20px) scale(0.98);
@@ -1783,10 +1733,10 @@ a.plain-link:hover,
   }
   .hero--tall {
     min-height: auto;
-    padding: 56px 0;
+    padding: 16px 0px 30px 0px;
   }
   .hero--tall .hero-img {
-    height: 340px;
+    height: 350px;
   }
   .hero--inset {
     margin: 4px;

@@ -76,16 +76,15 @@ console.log("FEATURED SERVICES COUNT:", content?.featuredServices?.length);
         />
       </div>
 
-      {/* Services page carousel */}
-      <div className="featured-carousel-item">
-      <ServiceCarousel
-  services={servicesContent.services || []}
-  editable={false}
-  showEmptyImageSlots={showEmptyImageSlots}
-  heading="Explore All Our Services"
-/>
-      </div>
-
+{/* Services page carousel */}
+<div className="featured-carousel-item all-services-carousel">
+  <ServiceCarousel
+    services={servicesContent.services || []}
+    editable={false}
+    showEmptyImageSlots={showEmptyImageSlots}
+    heading="Explore All Our Services"
+  />
+</div>
     </div>
 
     <div className="featured-services-cta">
