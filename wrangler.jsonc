@@ -8,10 +8,9 @@
   ],
  
   "vars": {
-   
-    "GITHUB_BRANCH": "final",
+      "GITHUB_BRANCH": "final",
     "GITHUB_REPO": "Issa-Josiah/Laundry_website",
-   
+    
 },
 
   "assets": {
