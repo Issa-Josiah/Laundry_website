@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -9,6 +10,8 @@ export default function ServiceCarousel({
   services = [],
   editable = false,
   showEmptyImageSlots = false,
+  editPath = "featuredServices",
+  heading = "Care, rotating through the day.",
 }) {
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
@@ -19,10 +22,12 @@ export default function ServiceCarousel({
     const interval = setInterval(() => {
       setFade(false);
 
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         setIndex((current) => (current + 1) % services.length);
         setFade(true);
       }, 400);
+
+      return () => clearTimeout(timeout);
     }, 15000);
 
     return () => clearInterval(interval);
@@ -44,33 +49,42 @@ export default function ServiceCarousel({
 
   return (
     <div className="carousel">
+
       <p className="eyebrow">What we offer</p>
 
       <h2 style={{ marginBottom: 20 }}>
-        Care, rotating through the day.
+        {heading}
       </h2>
 
-      <div className={`carousel-card${fade ? " is-visible" : ""}`}>
+      <div className={`carousel-card ${fade ? "is-visible" : ""}`}>
+
         <div className="carousel-image">
           {(hasImage || showEmptyImageSlots) && (
             <img
               src={hasImage ? current.image : EMPTY_IMAGE}
               alt={current.title}
               data-edit-image={
-                editable ? `featuredServices.${index}.image` : undefined
+                editable
+                  ? `${editPath}.${index}.image`
+                  : undefined
               }
               className={
-                editable && !hasImage ? "admin-service-image" : ""
+                editable && !hasImage
+                  ? "admin-service-image"
+                  : ""
               }
             />
           )}
         </div>
 
         <div className="carousel-body">
+
           <span
             className="carousel-num"
             data-edit={
-              editable ? `featuredServices.${index}.id` : undefined
+              editable
+                ? `${editPath}.${index}.id`
+                : undefined
             }
           >
             {current.id}
@@ -78,7 +92,9 @@ export default function ServiceCarousel({
 
           <h3
             data-edit={
-              editable ? `featuredServices.${index}.title` : undefined
+              editable
+                ? `${editPath}.${index}.title`
+                : undefined
             }
           >
             {current.title}
@@ -87,12 +103,13 @@ export default function ServiceCarousel({
           <p
             data-edit={
               editable
-                ? `featuredServices.${index}.description`
+                ? `${editPath}.${index}.description`
                 : undefined
             }
           >
             {current.description}
           </p>
+
         </div>
       </div>
 
@@ -101,8 +118,9 @@ export default function ServiceCarousel({
           <button
             key={service.id}
             type="button"
-            className={`dot${i === index ? " active" : ""}`}
+            className={`dot ${i === index ? "active" : ""}`}
             aria-label={`Show ${service.title}`}
+            aria-current={i === index ? "true" : undefined}
             onClick={() => {
               setIndex(i);
               setFade(true);
@@ -110,6 +128,7 @@ export default function ServiceCarousel({
           />
         ))}
       </div>
+
     </div>
   );
 }

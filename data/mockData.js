@@ -18,6 +18,7 @@ export const siteData = {
     locationTag: "Kirigiti Center, Along Kirigiti Riabai Road. Near Todas Restaurant.",
     heroImage: "/images/hero-basket.png",
   },
+  
   services: [
     { id: "01", title: "Wash & Fold", description: "Your everyday clothes, washed, dried and neatly folded, ready to put away.", image: "/images/wash-fold.png" },
     { id: "02", title: "Laundry", description: "Regular household laundry, sorted by colour and fabric for a fresh, even clean.", image: "/images/laundry.png" },

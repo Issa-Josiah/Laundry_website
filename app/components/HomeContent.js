@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ServiceCarousel from "../about/ServiceCarousel";
+import servicesContent from "../../content/services.json";
 
 const EMPTY_IMAGE =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 420'%3E%3Crect width='640' height='420' fill='%23f1f5f9'/%3E%3Ctext x='320' y='210' text-anchor='middle' font-size='65' fill='%2394a3b8'%3E%2B%3C/text%3E%3C/svg%3E";
@@ -8,7 +9,7 @@ export default function HomeContent({
   content,
   showEmptyImageSlots = false,
 }) { 
-  const hasHeroImage =
+    const hasHeroImage =
     typeof content.hero.heroImage === "string" &&
     content.hero.heroImage.trim() !== "";
 
@@ -53,17 +54,44 @@ export default function HomeContent({
         </div>
       </section>
 
-      {/* Featured Services */}
-      <section className="section section-alt">
-        <div className="container">
-          <ServiceCarousel
-            services={content.featuredServices || []}
-            editable={showEmptyImageSlots}
-            showEmptyImageSlots={showEmptyImageSlots}
-          />
-        </div>
-      </section>
-      
+{/* Featured Services */}
+<section className="section section-alt featured-services">
+  <div className="container featured-services-container">
+
+    <div className="featured-carousel-grid">
+
+      {/* Featured services carousel */}
+      <div className="featured-carousel-item">
+        <ServiceCarousel
+          services={content.featuredServices || []}
+          editable={showEmptyImageSlots}
+          showEmptyImageSlots={showEmptyImageSlots}
+          editPath="featuredServices"
+          heading="Our Featured Services"
+        />
+      </div>
+
+{/* Services page carousel */}
+<div className="featured-carousel-item all-services-carousel">
+  <ServiceCarousel
+    services={servicesContent.services || []}
+    editable={false}
+    showEmptyImageSlots={showEmptyImageSlots}
+    heading="Explore All Our Services"
+  />
+</div>
+    </div>
+
+    <div className="featured-services-cta">
+      <Link href="/services" className="btn">
+        Check out our services
+      </Link>
+    </div>
+
+  </div>
+</section>
+
+
 
       <section className="section">
         <div className="container">

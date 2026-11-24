@@ -25,79 +25,79 @@
       "id": "01",
       "title": "Wash & Fold",
       "description": "Your everyday clothes, washed, dried and neatly folded, ready to put away.",
-      "image": "/images/wash-fold.png"
+      "image": "/uploads/1795493564306-wash_and_fold.png"
     },
     {
       "id": "02",
       "title": "Laundry",
       "description": "Regular household laundry, sorted by colour and fabric for a fresh, even clean.",
-      "image": "/images/laundry.png"
+      "image": "/uploads/1795493629066-laundry.png"
     },
     {
       "id": "03",
       "title": "Dry Cleaning",
       "description": "Specialist care for suits, dresses and delicate garments that can't go in a washing machine.",
-      "image": "/images/dry-cleaning.png"
+      "image": "/uploads/1795493702090-dry_cleaning.png"
     },
     {
       "id": "04",
       "title": "Ironing & Pressing",
       "description": "A crisp, polished finish for your work and occasion wear.",
-      "image": ""
+      "image": "/uploads/1795493777936-iron_pressing.png"
     },
     {
       "id": "05",
       "title": "Express Cleaning",
       "description": "In a hurry? Get a faster turnaround on your laundry, subject to availability.",
-      "image": ""
+      "image": "/uploads/1795499509403-expresscleanig.png"
     },
     {
       "id": "06",
       "title": "Duvet Cleaning",
       "description": "Deep-cleaned and freshened duvets, so your bed feels comfortable again.",
-      "image": ""
+      "image": "/uploads/1795499519006-duvet_cleaning.png"
     },
     {
       "id": "07",
       "title": "Curtain Cleaning",
       "description": "Dust, stains and odours lifted from sheers and heavier curtains alike.",
-      "image": ""
+      "image": "/uploads/1795499719291-curtain_cleaning.jpg"
     },
     {
       "id": "08",
       "title": "Shoe Cleaning",
       "description": "Sneakers, canvas and casual shoes cleaned and refreshed to look their best.",
-      "image": ""
+      "image": "/uploads/1795499883751-shoe_cleaning.png"
     },
     {
       "id": "09",
       "title": "Stain Removal",
       "description": "Targeted treatment for stubborn marks on clothes and fabrics, with care matched to the material.",
-      "image": ""
+      "image": "/uploads/1795499761500-stain_removal.png"
     },
     {
       "id": "10",
       "title": "Fumigation",
       "description": "Treatment for homes and spaces to keep pests away, assessed on request.",
-      "image": ""
+      "image": "/uploads/1795499870994-fumigation.png"
     },
     {
       "id": "11",
       "title": "Carpet Cleaning",
       "description": "Deep cleaning for rugs and carpets, lifting dirt and odours from the fibres.",
-      "image": ""
+      "image": "/uploads/1795500042968-carpet_cleaning.png"
     },
     {
       "id": "12",
       "title": "Sofa / Upholstery Cleaning",
       "description": "Fresh, clean sofas and upholstered furniture, with care for the fabric.",
-      "image": ""
+      "image": "/uploads/1795500050072-sofa_upholstery_cleanig.png"
     },
     {
       "id": "13",
       "title": "Leather and Suede Cleaning",
       "description": "Gentle cleaning and care for leather and suede jackets, bags and shoes.",
-      "image": ""
+      "image": "/uploads/1795500117309-leather_sued_cleaning.png"
     },
     {
       "id": "14",

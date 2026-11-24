@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ServiceCarousel from "../about/ServiceCarousel";
+import KingsDeliveryCarousel from "../about/KingsDeliveryCarousel";
 
 
 const EMPTY_IMAGE =
@@ -92,8 +92,54 @@ export default function AboutContent({
             </div>
 
           <div className="carousel-col">
-            <ServiceCarousel services={featuredServices} />
+          
+<div className="carousel-card is-visible">
+  <div className="free-delivery-ad">
+
+    <div className="free-delivery-top">
+      <span className="free-delivery-brand">
+        KING'S DRYCLEANERS
+      </span>
+      <span className="free-delivery-badge">
+        FREE DELIVERY
+      </span>
+    </div>
+
+    <div>
+      <h2>
+        CLEAN CLOTHES.
+        <span>ZERO DELIVERY FEES.</span>
+      </h2>
+
+      <p>
+        Fresh laundry, delivered right to your doorstep.
+      </p>
+
+      <div className="free-delivery-highlight">
+        <strong>WE'LL BRING IT TO YOU!</strong>
+        <small>
+          Enjoy convenient laundry delivery without the extra delivery charge.
+        </small>
+      </div>
+    </div>
+
+    <div className="free-delivery-bottom">
+      <span className="free-delivery-tagline">
+        YOUR LAUNDRY. OUR RIDE.
+      </span>
+
+      <Link href="/contact" className="free-delivery-button">
+        BOOK NOW →
+      </Link>
+    </div>
+
+  </div>
+</div>
+
+            <KingsDeliveryCarousel />
+          
           </div>
+          
           </div>
         </div>
       </section>
