@@ -9,12 +9,7 @@ export default function HomeContent({
   content,
   showEmptyImageSlots = false,
 }) { 
-  console.log("ALL SERVICES:", content?.services);
-console.log("ALL SERVICES COUNT:", content?.services?.length);
-
-console.log("FEATURED SERVICES:", content?.featuredServices);
-console.log("FEATURED SERVICES COUNT:", content?.featuredServices?.length);
-  const hasHeroImage =
+    const hasHeroImage =
     typeof content.hero.heroImage === "string" &&
     content.hero.heroImage.trim() !== "";
 
