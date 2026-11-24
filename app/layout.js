@@ -18,7 +18,14 @@ export const metadata = {
   },
   description:
     "Laundry, dry-cleaning, carpets, duvets, curtains, ironing and fumigation. Pickup and delivery near Todas Restaurant, Kirigiti Center.",
-
+  authors: [
+  {
+    name: "Lincovate Technologies",
+    url: "https://lincovate.co.ke",
+  },
+],
+creator: "issa@staff.lincovate.com",
+publisher: "King's DryCleaners and Laundry",
   // PWA manifest
   manifest: "/manifest.webmanifest",
   appleWebApp: {
