@@ -6,6 +6,14 @@
   "compatibility_flags": [
     "nodejs_compat"
   ],
+ 
+  "vars": {
+   
+    "GITHUB_BRANCH": "final",
+    "GITHUB_REPO": "Issa-Josiah/Laundry_website",
+   
+},
+
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
