@@ -17,13 +17,18 @@
     "place": "Kirigiti Center",
     "landmark": "Along Kirigiti Riabai Road. Near Todas Restaurant.",
     "note": "Contact us to arrange pickup, delivery, express turnaround and order updates.",
-    "phone": "+254 792 590 662 or +254 795 318 789",
-    "whatsapp": "+254792590662",
+  
     "whatsappDisplay": "+254 792 590 662",
     "email": "kingorid449@gmail.com",
     "hours": [
-      { "days": "Monday – Saturday", "time": "07:00 AM – 21:00 PM" },
-      { "days": "Sunday", "time": "08:00 AM – 18:00 PM" }
+      {
+        "days": "Monday – Saturday",
+        "time": "07:00 AM – 21:00 PM"
+      },
+      {
+        "days": "Sunday",
+        "time": "08:00 AM – 18:00 PM"
+      }
     ]
   }
 }
