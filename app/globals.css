@@ -321,7 +321,7 @@ section[id] { scroll-margin-top: 64px; }
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at top right, rgba(255, 214, 107, 0.2), transparent 55%),
+    radial-gradient(circle at top right, rgba(255, 214, 107, 0.2), transparent 10%),
     linear-gradient(135deg, rgba(10, 76, 114, 0.18), rgba(7, 29, 45, 0)),
     #EBF7FF;
 
@@ -682,7 +682,7 @@ section[id] { scroll-margin-top: 64px; }
   border-radius: 16px;
   background:
     radial-gradient(circle at 95% 5%,
-      rgba(169, 199, 232, 0.27), transparent 38%),
+      rgba(58, 42, 32, 0.27), transparent 59%),
     linear-gradient(135deg, #3a2a20, #513727);
   color: #fff;
   display: flex;
@@ -1132,15 +1132,7 @@ a.plain-link:hover,
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-12px); }
 }
-/* Buttons */
-.btn-outline {
-  background: transparent;
-  color: var(--brown);
-  border: 1px solid var(--brown);
-}
-.btn-outline:hover { background: var(--brown); color: #fff; }
-
-
+  
 /* Footer */
 .footer { background: var(--brown); color: #f2ece0; padding: 48px 0 24px; }
 .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -1621,7 +1613,7 @@ a.plain-link:hover,
    .services-hero-grid { grid-template-columns: 1fr; gap: 28px; }
   .bulk-band { padding: 28px 24px; }
   .bulk-band .btn-light { width: 100%; text-align: center; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .gallery-grid { grid-template-columns: repeat(1, 1fr); gap: 16px; }
 .kings-3d {
     display: none !important;
   }
