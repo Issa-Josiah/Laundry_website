@@ -10,6 +10,8 @@ const adminLinks = [
   { label: "Gallery", href: "/admin/gallery" },
   { label: "Find Us", href: "/admin/find-us" },
   { label: "Contact", href: "/admin/contact" },
+  
+
 ];
 
 export default function AdminNavigation() {

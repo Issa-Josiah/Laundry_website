@@ -10,6 +10,8 @@ const PAGES = [
   { key: "about", label: "About", href: "/admin/about" },
   { key: "find-us", label: "Find Us", href: "/admin/find-us" },
   { key: "contact", label: "Contact", href: "/admin/contact" },
+  { key: "github", label: "GitHub Repository", href: "https://github.com/YOUR_USERNAME/YOUR_REPOSITORY", external: true },
+  { key: "cloudflare", label: "Cloudflare", href: "https://dash.cloudflare.com/", external: true }
 ];
 export default function AdminDashboard() {
   const router = useRouter();
