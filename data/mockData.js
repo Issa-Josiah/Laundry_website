@@ -107,7 +107,7 @@ export const siteData = {
     phone: "+254 792 590 662 or +254 795 318 789",
     whatsapp: "+254792590662",
     whatsappDisplay: "+254 792 590 662",
-    email: "kingorid449@gmail.com",
+    email: "wash@kingslaundry.co.ke",
     facebook: "",
     tiktok: "",
   },
